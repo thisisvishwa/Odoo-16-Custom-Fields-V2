@@ -1,0 +1,50 @@
+/* Product Template Styles */
+.product_template_form {
+    /* Style for the product template form view */
+}
+
+.product_template_list {
+    /* Style for the product template list view */
+}
+
+.product_template_tree {
+    /* Style for the product template tree view */
+}
+
+/* Additional field styles */
+.field_product_name {
+    font-weight: bold;
+}
+
+.field_barcode {
+    font-family: monospace;
+}
+
+.field_cost,
+.field_sale_price {
+    color: #333;
+    font-weight: bold;
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+    .field_product_name,
+    .field_barcode,
+    .field_cost,
+    .field_sale_price {
+        font-size: 14px;
+    }
+}
+
+/* Enhancements for visibility */
+.field_cost:before {
+    content: "Cost: ";
+    font-style: italic;
+    color: #888;
+}
+
+.field_sale_price:before {
+    content: "Sale Price: ";
+    font-style: italic;
+    color: #888;
+}

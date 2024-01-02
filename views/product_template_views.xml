@@ -1,0 +1,99 @@
+<odoo>
+    <data>
+
+        <!-- Inherit and modify the form view of product.template -->
+        <record id="view_product_template_form_inherit" model="ir.ui.view">
+            <field name="name">product.template.form.inherit</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.view_product_template_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group[@name='sales']" position="inside">
+                    <field name="list_price" string="Sale Price"/>
+                </xpath>
+                <xpath expr="//group[@name='general_information']" position="inside">
+                    <field name="barcode"/>
+                </xpath>
+                <xpath expr="//group[@name='cost']" position="inside">
+                    <field name="standard_price" string="Cost"/>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- Inherit and modify the tree view of product.template -->
+        <record id="view_product_template_tree_inherit" model="ir.ui.view">
+            <field name="name">product.template.tree.inherit</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.view_product_template_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='default_code']" position="after">
+                    <field name="barcode"/>
+                    <field name="standard_price" string="Cost"/>
+                    <field name="list_price" string="Sale Price"/>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- Inherit and modify the list view of product.template -->
+        <record id="view_product_template_list_inherit" model="ir.ui.view">
+            <field name="name">product.template.list.inherit</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.view_product_template_list"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='default_code']" position="after">
+                    <field name="barcode"/>
+                    <field name="standard_price" string="Cost"/>
+                    <field name="list_price" string="Sale Price"/>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- Inherit and modify the form view of purchase.order.line -->
+        <record id="view_purchase_order_line_form_inherit" model="ir.ui.view">
+            <field name="name">purchase.order.line.form.inherit</field>
+            <field name="model">purchase.order.line</field>
+            <field name="inherit_id" ref="purchase.view_purchase_order_line_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='product_id']" position="after">
+                    <field name="product_id" invisible="1"/>
+                    <field name="name" string="Product Name"/>
+                    <field name="barcode" invisible="1"/>
+                    <field name="standard_price" invisible="1"/>
+                    <field name="list_price" invisible="1"/>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- Inherit and modify the form view of sale.order.line -->
+        <record id="view_sale_order_line_form_inherit" model="ir.ui.view">
+            <field name="name">sale.order.line.form.inherit</field>
+            <field name="model">sale.order.line</field>
+            <field name="inherit_id" ref="sale.view_order_line_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='product_id']" position="after">
+                    <field name="product_id" invisible="1"/>
+                    <field name="name" string="Product Name"/>
+                    <field name="barcode" invisible="1"/>
+                    <field name="standard_price" invisible="1"/>
+                    <field name="list_price" invisible="1"/>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- Inherit and modify the form view of stock.picking -->
+        <record id="view_stock_picking_form_inherit" model="ir.ui.view">
+            <field name="name">stock.picking.form.inherit</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='product_id']" position="after">
+                    <field name="product_id" invisible="1"/>
+                    <field name="name" string="Product Name"/>
+                    <field name="barcode" invisible="1"/>
+                    <field name="standard_price" invisible="1"/>
+                    <field name="list_price" invisible="1"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

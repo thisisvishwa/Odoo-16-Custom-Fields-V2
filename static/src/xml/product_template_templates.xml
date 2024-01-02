@@ -1,0 +1,12 @@
+<odoo>
+    <templates>
+        <t t-name="product_template_template">
+            <div class="oe_product_template">
+                <field name="name"/>
+                <field name="barcode"/>
+                <field name="standard_price"/>
+                <field name="list_price"/>
+            </div>
+        </t>
+    </templates>
+</odoo>
